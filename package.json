@@ -1,0 +1,30 @@
+{
+  "name": "manage-landing-page-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Manage landing page coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-watch": "sass --watch ./src/styles:./dist/styles",
+    "tsc-watch": "tsc -w",
+    "lite-server": "lite-server",
+    "start": "npm-run-all -p sass-watch tsc-watch lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Breckles/manage_landing_page.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Breckles/manage_landing_page/issues"
+  },
+  "homepage": "https://github.com/Breckles/manage_landing_page#readme",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "lite-server": "^2.5.4"
+  }
+}
