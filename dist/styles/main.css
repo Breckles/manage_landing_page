@@ -1,3 +1,156 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Be Vietnam", Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  background-image: url("../../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: 15vw -30vw;
+  --theme-bright-red: hsl(12, 88%, 59%);
+  --theme-dark-blue: hsl(228, 39%, 23%);
+  --theme-dark-greyish-blue: hsl(227, 12%, 61%);
+  --theme-very-dark-blue: hsl(233, 12%, 13%);
+  --theme-very-pale-red: hsl(13, 100%, 96%);
+  --theme-very-light-gray: hsl(0, 0%, 98%);
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+h1,
+h2 {
+  line-height: 1.5;
+  letter-spacing: -0.1rem;
+  color: var(--theme-dark-blue);
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  letter-spacing: -0.05rem;
+  color: var(--theme-dark-blue);
+}
+
+p,
+q {
+  line-height: 2;
+  color: var(--theme-dark-greyish-blue);
+}
+
+.getStartedButton {
+  display: block;
+  padding: 1.3rem 3.5rem;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--theme-very-pale-red);
+  background-color: var(--theme-bright-red);
+  border-radius: 4rem;
+  box-shadow: 0 2rem 1rem -1rem #fcc5b6;
+}
+
+header {
+  display: flex;
+  margin: 4rem 2.5rem 4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+header #headerLogo {
+  max-height: 2rem;
+}
+header nav {
+  display: none;
+}
+header .buttonContainer {
+  display: none;
+}
+
+#introSection {
+  padding: 0 1.5rem 7rem;
+  text-align: center;
+  background-image: url("../../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: 64vw bottom;
+}
+#introSection img {
+  max-width: 100%;
+}
+#introSection h1 {
+  padding: 1rem;
+}
+#introSection p {
+  padding: 0 2rem;
+  font-weight: 300;
+}
+#introSection .buttonContainer {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+#theDifferenceSection h2,
+#theDifferenceSection p {
+  text-align: center;
+}
+#theDifferenceSection h2 {
+  padding: 0 4rem 2rem;
+}
+#theDifferenceSection h2 + p {
+  padding: 0 3rem;
+  margin-bottom: 5rem;
+}
+#theDifferenceSection p {
+  font-size: 1.4rem;
+}
+#theDifferenceSection ol {
+  list-style-type: none;
+}
+#theDifferenceSection li {
+  margin: 0 0 5rem 1.7rem;
+}
+#theDifferenceSection .listItemHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: var(--theme-very-pale-red);
+  border-bottom-left-radius: 2.5rem;
+  border-top-left-radius: 2.5rem;
+}
+#theDifferenceSection .listItemHeader span {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 2.5rem;
+  margin-right: 1.5rem;
+  font-weight: 500;
+  background: var(--theme-bright-red);
+  color: var(--theme-very-light-gray);
+  border-radius: 2.5rem;
+}
+#theDifferenceSection .listItemDescription {
+  text-align: left;
+  padding-right: 2rem;
+}
+
+#testimonialsSection {
+  text-align: center;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;

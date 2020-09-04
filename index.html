@@ -11,9 +11,12 @@
         sizes="32x32"
         href="./images/favicon-32x32.png">
   <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet"
         href="./dist/styles/main.css">
 
-  <script src="./dist/scripts/main.js"></script>
+  <script src="./dist/scripts/main.js"
+          type="module"></script>
 
   <title>Frontend Mentor | Manage landing page</title>
 
@@ -21,88 +24,203 @@
 
 <body>
 
-  Pricing
-  Product
-  About Us
-  Careers
-  Community
-
-  Get Started
-
-  Bring everyone together to build better products.
-
-  Manage makes it simple for software teams to plan day-to-day
-  tasks while keeping the larger team goals in view.
-
-  Get Started
-
-  What’s different about Manage?
-
-  Manage provides all the functionality your team needs, without
-  the complexity. Our software is tailor-made for modern digital
-  product teams.
-
-  01
-  Track company-wide progress
-  See how your day-to-day tasks fit into the wider vision. Go from
-  tracking progress at the milestone level all the way done to the
-  smallest of details. Never lose sight of the bigger picture again.
-
-  02
-  Advanced built-in reports
-  Set internal delivery estimates and track progress toward company
-  goals. Our customisable dashboard helps you build out the reports
-  you need to keep key stakeholders informed.
-
-  03
-  Everything you need in one place
-  Stop jumping from one service to another to communicate, store files,
-  track tasks and share documents. Manage offers an all-in-one team
-  productivity solution.
-
-  What they’ve said
-
-  Anisha Li
-  “Manage has supercharged our team’s workflow. The ability to maintain
-  visibility on larger milestones at all times keeps everyone motivated.”
-
-  Ali Bravo
-  “We have been able to cancel so many other subscriptions since using
-  Manage. There is no more cross-channel confusion and everyone is much
-  more focused.”
-
-  Richard Watts
-  “Manage allows us to provide structure and process. It keeps us organized
-  and focused. I can’t stop recommending them to everyone I talk to!”
-
-  Shanai Gough
-  “Their software allows us to track, manage and collaborate on our projects
-  from anywhere. It keeps the whole team in-sync without being intrusive.”
-
-  Get Started
-
-  Simplify how your team works today.
-  Get Started
-
-  Home
-  Pricing
-  Products
-  About Us
-  Careers
-  Community
-  Privacy Policy
-
-  Updates in your inbox…
-  Go
-
-  Copyright 2020. All Rights Reserved
+  <header>
+    <img id="headerLogo"
+         src="./images/logo.svg"
+         alt="The Manage logo">
+    <div id="nav">
+      <div id="hamburgerIconContainer">
+        <img src="./images/icon-hamburger.svg"
+             alt="Hamburger menu icon">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </nav>
+      <div class="buttonContainer">
+        <!-- will be styled to look like a button. I'm using an <a> element
+        because the button is intended to navigate and this maintains semantic
+        markup -->
+        <a href="#"
+           class="getStartedButton">Get Started</a>
+      </div>
+    </div>
+  </header>
 
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge"
-       target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main>
+    <section id="introSection">
+      <img src="./images/illustration-intro.svg"
+           alt="An image containing a pie chart, a bar graph, and some statistics">
+      <h1>Bring everyone together to build better products.</h1>
+      <p>
+        Manage makes it simple for software teams to plan day-to-day
+        tasks while keeping the larger team goals in view.
+      </p>
+      <div class="buttonContainer">
+        <a href="#"
+           class="getStartedButton">Get Started</a>
+      </div>
+    </section>
+
+    <section id="theDifferenceSection">
+      <h2>What’s different about Manage?</h2>
+      <p>
+        Manage provides all the functionality your team needs, without
+        the complexity. Our software is tailor-made for modern digital
+        product teams.
+      </p>
+      <ol>
+        <li>
+          <h3 class="listItemHeader"><span>01</span>Track company-wide progress</h3>
+          <p class="listItemDescription">
+            See how your day-to-day tasks fit into the wider vision. Go from
+            tracking progress at the milestone level all the way done to the
+            smallest of details. Never lose sight of the bigger picture again.
+          </p>
+        </li>
+        <li>
+          <h3 class="listItemHeader"><span>02</span>Advanced built-in reports</h3>
+          <p class="listItemDescription">
+            Set internal delivery estimates and track progress toward company
+            goals. Our customisable dashboard helps you build out the reports
+            you need to keep key stakeholders informed.
+          </p>
+        </li>
+        <li>
+          <h3 class="listItemHeader"><span>03</span>Everything you need in one place</h3>
+          <p class="listItemDescription">
+            Stop jumping from one service to another to communicate, store files,
+            track tasks and share documents. Manage offers an all-in-one team
+            productivity solution.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="testimonialsSection">
+      <h2>What they’ve said</h2>
+      <ul>
+        <li>
+          <div class="avatarImageContainer">
+            <img src="./images/avatar-anisha.png"
+                 alt="An image of the user's avatar">
+          </div>
+          <h3 class="testimonialName">Anisha Li</h3>
+          <q>Manage has supercharged our team’s workflow. The ability to maintain
+            visibility on larger milestones at all times keeps everyone motivated.</q>
+        </li>
+        <li>
+          <div class="avatarImageContainer">
+            <img src="./images/avatar-ali.png"
+                 alt="An image of the user's avatar">
+          </div>
+          <h3 class="testimonialName">Ali Bravo</h3>
+          <q>We have been able to cancel so many other subscriptions since using
+            Manage. There is no more cross-channel confusion and everyone is much
+            more focused.</q>
+        </li>
+        <li>
+          <div class="avatarImageContainer">
+            <img src="./images/avatar-richard.png"
+                 alt="An image of the user's avatar">
+          </div>
+          <h3 class="testimonialName">Richard Watts</h3>
+          <q>Manage allows us to provide structure and process. It keeps us organized
+            and focused. I can’t stop recommending them to everyone I talk to!</q>
+        </li>
+        <li>
+          <div class="avatarImageContainer">
+            <img src="./images/avatar-shanai.png"
+                 alt="An image of the user's avatar">
+          </div>
+          <h3 class="testimonialName">Shanai Gough</h3>
+          <q>Their software allows us to track, manage and collaborate on our projects
+            from anywhere. It keeps the whole team in-sync without being intrusive.</q>
+        </li>
+      </ul>
+      <a href="#"
+         class="getStartedButton">Get Started</a>
+    </section>
+
+    <section id="simplifySection">
+      <h1>Simplify how your team works today.</h1>
+      <div class="buttonContainer">
+        <a href="#"
+           class="getStartedButton">Get Started</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <form action="javascript:void(0)">
+      <input type="email"
+             placeholder="Updates in your inbox...">
+      <button type="submit">GO</button>
+    </form>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </nav>
+
+
+    <section id="socialMediaLinks">
+      <ul>
+        <li>
+          <a href="#">
+            <img src="./images/icon-facebook.svg"
+                 alt="Facebook icon">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/icon-youtube.svg"
+                 alt="Youtube icon">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/icon-twitter.svg"
+                 alt="Twitter icon">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/icon-pinterest.svg"
+                 alt="Pinterest icon">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/icon-instagram.svg"
+                 alt="Instagram icon">
+          </a>
+        </li>
+      </ul>
+    </section>
+    <div id="footerLogo">
+      <img src="./images/logo.svg"
+           alt="The Manage logo">
+    </div>
+    <div id="copyrightInfo">Copyright 2020. All Rights Reserved</div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge"
+         target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
 </body>
 
 </html>
