@@ -150,6 +150,33 @@ header .buttonContainer {
 #testimonialsSection {
   text-align: center;
 }
+#testimonialsSection h2 {
+  letter-spacing: -0.05rem;
+  margin-bottom: 4rem;
+}
+#testimonialsSection #testimonialSpinner {
+  display: flex;
+  overflow: hidden;
+  list-style-type: none;
+}
+#testimonialsSection li {
+  min-width: 100%;
+  padding: 2rem;
+}
+#testimonialsSection .avatarImage {
+  max-width: 20vw;
+  margin-bottom: -11vw;
+}
+#testimonialsSection .testimonial {
+  padding: 6rem 2rem 4rem;
+  background: var(--theme-very-light-gray);
+}
+#testimonialsSection .userName {
+  margin-bottom: 2rem;
+}
+#testimonialsSection q {
+  font-size: 1.4rem;
+}
 
 .attribution {
   font-size: 11px;

@@ -183,6 +183,42 @@ header {
 
 #testimonialsSection {
   text-align: center;
+
+  h2 {
+    letter-spacing: -0.05rem;
+    margin-bottom: 4rem;
+  }
+
+  #testimonialSpinner {
+    display: flex;
+    overflow: hidden;
+
+    list-style-type: none;
+  }
+
+  li {
+    min-width: 100%;
+    padding: 2rem;
+  }
+
+  .avatarImage {
+    max-width: 20vw;
+    margin-bottom: -11vw;
+  }
+
+  .testimonial {
+    padding: 6rem 2rem 4rem;
+
+    background: var(--theme-very-light-gray);
+  }
+
+  .userName {
+    margin-bottom: 2rem;
+  }
+
+  q {
+    font-size: 1.4rem;
+  }
 }
 
 //////////////////////////////////////////////////////////////////
