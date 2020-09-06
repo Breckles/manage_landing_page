@@ -189,16 +189,21 @@ header {
     margin-bottom: 4rem;
   }
 
-  #testimonialSpinner {
+  #testimonials {
     display: flex;
-    overflow: hidden;
+    // overflow: hidden;
+    position: relative;
+    left: 0;
 
     list-style-type: none;
+    transition: all 250ms ease-in-out;
   }
 
   li {
     min-width: 100%;
     padding: 2rem;
+    // position: relative;
+
   }
 
   .avatarImage {
@@ -207,7 +212,7 @@ header {
   }
 
   .testimonial {
-    padding: 6rem 2rem 4rem;
+    padding: 17vw 2rem 4rem;
 
     background: var(--theme-very-light-gray);
   }
@@ -218,6 +223,10 @@ header {
 
   q {
     font-size: 1.4rem;
+  }
+
+  #testimonialPicker li {
+    cursor: pointer;
   }
 }
 

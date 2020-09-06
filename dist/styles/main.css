@@ -154,10 +154,12 @@ header .buttonContainer {
   letter-spacing: -0.05rem;
   margin-bottom: 4rem;
 }
-#testimonialsSection #testimonialSpinner {
+#testimonialsSection #testimonials {
   display: flex;
-  overflow: hidden;
+  position: relative;
+  left: 0;
   list-style-type: none;
+  transition: all 250ms ease-in-out;
 }
 #testimonialsSection li {
   min-width: 100%;
@@ -168,7 +170,7 @@ header .buttonContainer {
   margin-bottom: -11vw;
 }
 #testimonialsSection .testimonial {
-  padding: 6rem 2rem 4rem;
+  padding: 17vw 2rem 4rem;
   background: var(--theme-very-light-gray);
 }
 #testimonialsSection .userName {
@@ -176,6 +178,9 @@ header .buttonContainer {
 }
 #testimonialsSection q {
   font-size: 1.4rem;
+}
+#testimonialsSection #testimonialPicker li {
+  cursor: pointer;
 }
 
 .attribution {
