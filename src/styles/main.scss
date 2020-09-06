@@ -53,6 +53,11 @@ q {
   color: var(--theme-dark-greyish-blue);
 }
 
+ul,
+ol {
+  list-style-type: none;
+}
+
 .getStartedButton {
   display: block;
   padding: 1.3rem 3.5rem;
@@ -143,10 +148,6 @@ header {
 
   }
 
-  ol {
-    list-style-type: none;
-  }
-
   li {
     margin: 0 0 5rem 1.7rem;
   }
@@ -195,16 +196,16 @@ header {
     position: relative;
     left: 0;
 
-    list-style-type: none;
     transition: all 250ms ease-in-out;
+
+    li {
+      // position: relative;
+      min-width: 100%;
+      padding: 2rem;
+
+    }
   }
 
-  li {
-    min-width: 100%;
-    padding: 2rem;
-    // position: relative;
-
-  }
 
   .avatarImage {
     max-width: 20vw;
@@ -225,8 +226,28 @@ header {
     font-size: 1.4rem;
   }
 
-  #testimonialPicker li {
-    cursor: pointer;
+  #testimonialPicker {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+
+    color: var(--theme-bright-red);
+
+    li {
+      margin: 0 0.2rem;
+    }
+
+    .bullet {
+      width: 0.8rem;
+      height: 0.8rem;
+
+      border: 1px solid var(--theme-bright-red);
+      border-radius: 50%;
+    }
+
+    .active {
+      background: var(--theme-bright-red);
+    }
   }
 }
 

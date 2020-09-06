@@ -52,6 +52,11 @@ q {
   color: var(--theme-dark-greyish-blue);
 }
 
+ul,
+ol {
+  list-style-type: none;
+}
+
 .getStartedButton {
   display: block;
   padding: 1.3rem 3.5rem;
@@ -118,9 +123,6 @@ header .buttonContainer {
 #theDifferenceSection p {
   font-size: 1.4rem;
 }
-#theDifferenceSection ol {
-  list-style-type: none;
-}
 #theDifferenceSection li {
   margin: 0 0 5rem 1.7rem;
 }
@@ -158,10 +160,9 @@ header .buttonContainer {
   display: flex;
   position: relative;
   left: 0;
-  list-style-type: none;
   transition: all 250ms ease-in-out;
 }
-#testimonialsSection li {
+#testimonialsSection #testimonials li {
   min-width: 100%;
   padding: 2rem;
 }
@@ -179,8 +180,23 @@ header .buttonContainer {
 #testimonialsSection q {
   font-size: 1.4rem;
 }
+#testimonialsSection #testimonialPicker {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+  color: var(--theme-bright-red);
+}
 #testimonialsSection #testimonialPicker li {
-  cursor: pointer;
+  margin: 0 0.2rem;
+}
+#testimonialsSection #testimonialPicker .bullet {
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 1px solid var(--theme-bright-red);
+  border-radius: 50%;
+}
+#testimonialsSection #testimonialPicker .active {
+  background: var(--theme-bright-red);
 }
 
 .attribution {

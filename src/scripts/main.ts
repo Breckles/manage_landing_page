@@ -1,4 +1,3 @@
-// if (window.screen.width < 400) {
 const testimonialPicker = document.querySelector(
   '#testimonialPicker'
 ) as HTMLUListElement;
@@ -15,7 +14,5 @@ for (const testimonialSelection of testimonialPicker.children) {
   testimonialSelection.addEventListener('click', () => {
     // modify list position to display selected testimonial
     testimonials.style.left = `-${testimonialXPosition}px`;
-    console.log(testimonials.style.left);
   });
 }
-// }
