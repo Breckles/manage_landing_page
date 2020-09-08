@@ -48,8 +48,15 @@ h3 {
 
 p,
 q {
-  line-height: 2;
   color: var(--theme-dark-greyish-blue);
+}
+
+p {
+  line-height: 2;
+}
+
+q {
+  line-height: 1.8;
 }
 
 ul,
@@ -159,19 +166,29 @@ header .buttonContainer {
 #testimonialsSection #testimonials {
   display: flex;
   position: relative;
-  left: 0;
-  transition: all 250ms ease-in-out;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 #testimonialsSection #testimonials li {
   min-width: 100%;
+  min-height: 100%;
   padding: 2rem;
+  scroll-snap-align: center;
+}
+#testimonialsSection #testimonials::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 #testimonialsSection .avatarImage {
-  max-width: 20vw;
+  max-width: 19vw;
   margin-bottom: -11vw;
 }
 #testimonialsSection .testimonial {
-  padding: 17vw 2rem 4rem;
+  min-height: 100%;
+  padding: 16vw 2rem 2rem;
   background: var(--theme-very-light-gray);
 }
 #testimonialsSection .userName {
@@ -180,22 +197,22 @@ header .buttonContainer {
 #testimonialsSection q {
   font-size: 1.4rem;
 }
-#testimonialsSection #testimonialPicker {
+#testimonialsSection #testimonialIndicator {
   display: flex;
   justify-content: center;
-  margin-bottom: 5rem;
+  margin: 2.5rem 0 5rem;
   color: var(--theme-bright-red);
 }
-#testimonialsSection #testimonialPicker li {
+#testimonialsSection #testimonialIndicator li {
   margin: 0 0.2rem;
 }
-#testimonialsSection #testimonialPicker .bullet {
+#testimonialsSection #testimonialIndicator .bullet {
   width: 0.8rem;
   height: 0.8rem;
   border: 1px solid var(--theme-bright-red);
   border-radius: 50%;
 }
-#testimonialsSection #testimonialPicker .active {
+#testimonialsSection #testimonialIndicator .active {
   background: var(--theme-bright-red);
 }
 
