@@ -1,29 +1,78 @@
+//// Testimonial Indicators ///////////////////////////////////////////////////////
+
 const testimonialsEl = document.querySelector(
   '#testimonials'
 ) as HTMLUListElement;
 
+const testimonialIndicatorsEl = document.querySelector(
+  '#testimonialIndicator'
+) as HTMLUListElement;
+
 const testimonials = testimonialsEl.children;
+const indicators = testimonialIndicatorsEl.children;
 
-const testimonialVisibleWidth = +window
-  .getComputedStyle(testimonialsEl)
-  .width.replace('px', '');
+let previousActiveBullet = testimonialIndicatorsEl.children[0]
+  .firstElementChild as HTMLDivElement;
 
-const testimonialActualWidth = testimonialsEl.scrollWidth;
+// Create options for intersection observer
+const observerOptions = {
+  root: testimonialsEl,
+  threshold: 0.5,
+};
 
-console.log(`Testimonials visible width: ${testimonialVisibleWidth}`);
-console.log(`Testimonials actual width: ${testimonialActualWidth}`);
+const observer = new IntersectionObserver(
+  (entries: IntersectionObserverEntry[]) => {
+    const activeTestimonial = entries.find((testimonial) => {
+      return testimonial.isIntersecting === true;
+    })!.target;
 
-testimonialsEl.addEventListener('touchend', () => {
-  // console.log(
-  //   Math.floor(testimonialsEl.scrollLeft / (testimonialVisibleWidth / 2))
-  // );
-  console.log(`current scrollLeft: ${testimonialsEl.scrollLeft}`);
+    const newActiveBulletId = activeTestimonial.id.replace(
+      'testimonial',
+      'bullet'
+    );
 
-  console.log(
-    `scrollLeft / actualWidth: ${
-      ((testimonialsEl.scrollLeft / testimonialActualWidth) * 10) / 3
-    }`
-  );
+    const newActiveBullet = document.querySelector(`#${newActiveBulletId}`)
+      ?.firstElementChild as HTMLDivElement;
 
-  // console.log((testimonialsEl.scrollLeft / (testimonialActualWidth * 2)) * 10);
+    previousActiveBullet.classList.remove('active');
+    newActiveBullet.classList.add('active');
+    previousActiveBullet = newActiveBullet;
+  },
+  observerOptions
+);
+
+for (const testimonial of testimonials) {
+  observer.observe(testimonial);
+}
+
+//// Form validation //////////////////////////////////////////////////////////
+
+const submitButtonEl = document.querySelector(
+  '#submitButton'
+) as HTMLButtonElement;
+
+submitButtonEl.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const subscribeFormEl = document.querySelector(
+    '#subscribeForm'
+  ) as HTMLFormElement;
+  const emailInputEl = document.querySelector('#email') as HTMLInputElement;
+  const errorMessageEl = document.querySelector(
+    '#errorMessage'
+  ) as HTMLDivElement;
+
+  if (emailInputEl.validity.valid) {
+    // Reset form
+    emailInputEl.style.boxShadow = 'none';
+    emailInputEl.style.color = 'black';
+    errorMessageEl.style.display = 'none';
+    subscribeFormEl.reset();
+  } else {
+    // Display error
+    // Using boxShadow instead of border because its render won't affect vertical rythm
+    emailInputEl.style.boxShadow = '0 0 1px 1px var(--theme-bright-red)';
+    emailInputEl.style.color = 'var(--theme-bright-red)';
+    errorMessageEl.style.display = 'block';
+  }
 });
