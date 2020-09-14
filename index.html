@@ -29,13 +29,14 @@
     <img id="headerLogo"
          src="./images/logo.svg"
          alt="The Manage logo">
-    <div id="nav">
-      <div id="hamburgerIconContainer">
-        <img src="./images/icon-hamburger.svg"
-             alt="Hamburger menu icon">
+    <div id="navContainer">
+      <div id="menuToggleContainer">
+        <img id="menuToggle"
+             src="./images/icon-hamburger.svg"
+             alt="Menu toggle icon">
       </div>
-      <nav>
-        <ul>
+      <nav id="headerNav">
+        <ul id="headerNavList">
           <li><a href="#">Pricing</a></li>
           <li><a href="#">Product</a></li>
           <li><a href="#">About Us</a></li>
@@ -55,17 +56,20 @@
 
 
   <main>
+
     <section id="introSection">
       <img src="./images/illustration-intro.svg"
            alt="An image containing a pie chart, a bar graph, and some statistics">
-      <h1>Bring everyone together to build better products.</h1>
-      <p>
-        Manage makes it simple for software teams to plan day-to-day
-        tasks while keeping the larger team goals in view.
-      </p>
-      <div class="buttonContainer">
-        <a href="#"
-           class="getStartedButton">Get Started</a>
+      <div id="introInfo">
+        <h1>Bring everyone together to build better products.</h1>
+        <p>
+          Manage makes it simple for software teams to plan day-to-day
+          tasks while keeping the larger team goals in view.
+        </p>
+        <div class="buttonContainer">
+          <a href="#"
+             class="getStartedButton">Get Started</a>
+        </div>
       </div>
     </section>
 
