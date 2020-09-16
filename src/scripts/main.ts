@@ -1,9 +1,20 @@
-// Reload page on resize
+// Reload page on resize if screen width crosses a threshold
+// Breakpoints: 700, 1350
+let previousWidth = window.screen.width;
 addEventListener('resize', () => {
-  console.log('resizing...');
-  setTimeout(() => {
-    location.reload();
-  }, 100);
+  const newWidth = window.screen.width;
+  if (
+    (newWidth <= 700 && previousWidth >= 700) ||
+    (newWidth <= 1350 && previousWidth >= 1350) ||
+    (newWidth >= 700 && previousWidth <= 700) ||
+    (newWidth >= 1350 && previousWidth <= 1350)
+  ) {
+    setTimeout(() => {
+      location.reload();
+    }, 100);
+  }
+
+  previousWidth = newWidth;
 });
 
 const testimonialsEl = document.querySelector(

@@ -489,7 +489,7 @@ footer {
   }
 }
 
-//// Screen width >= 1440 //////////////////////////////////////////////////////////////
+//// Screen width >= 1350px //////////////////////////////////////////////////////////////
 
 @media screen and (min-width: 1350px) {
   html {
@@ -505,7 +505,7 @@ footer {
     opacity: 0.65;
   }
 
-  //// Header section (>=1440px) ///////////////////////////////////////////////////////
+  //// Header section (>=1350px) ///////////////////////////////////////////////////////
 
   #topHeader {
     height: auto;
@@ -563,7 +563,7 @@ footer {
     }
   }
 
-  //// Intro Section (>=1440px) ////////////////////////////////////////////////
+  //// Intro Section (>=1350px) ////////////////////////////////////////////////
 
   #introSection {
     display: flex;
@@ -603,7 +603,7 @@ footer {
     }
   }
 
-  //// The difference section (>=1440px) ////////////////////////////////////
+  //// The difference section (>=1350px) ////////////////////////////////////
 
   #theDifferenceSection {
     display: flex;
@@ -652,7 +652,7 @@ footer {
     }
   }
 
-  //// Testimonials section (>=1440px) ////////////////////////////////
+  //// Testimonials section (>=1350px) ////////////////////////////////
 
   #testimonialsSection {
     margin-top: 9rem;
@@ -763,7 +763,7 @@ footer {
     }
   }
 
-  //// Simplify section (>=1440px) //////////////////////////////////////
+  //// Simplify section (>=1350px) //////////////////////////////////////
 
   #simplifySection {
     display: flex;
@@ -797,7 +797,7 @@ footer {
     }
   }
 
-  //// Footer (>=1440px) //////////////////////////////////////////
+  //// Footer (>=1350px) //////////////////////////////////////////
 
   footer {
     display: grid;
