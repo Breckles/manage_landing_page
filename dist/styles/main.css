@@ -24,7 +24,6 @@ html {
 
 body {
   font-size: 1.6rem;
-  margin: 0 auto;
 }
 
 h1,
@@ -182,7 +181,12 @@ ol {
 }
 #testimonialsSection h2 {
   letter-spacing: -0.05rem;
-  margin-bottom: 4rem;
+}
+#testimonialsSection .spinnerBtn {
+  display: none;
+}
+#testimonialsSection #testimonials:hover .spinnerBtn {
+  display: block;
 }
 #testimonialsSection #testimonials {
   display: flex;
@@ -204,12 +208,12 @@ ol {
   height: 0;
 }
 #testimonialsSection .avatarImage {
-  max-width: 19vw;
-  margin-bottom: -11vw;
+  max-width: 20vw;
+  transform: translateY(56%);
 }
 #testimonialsSection .testimonial {
   min-height: 100%;
-  padding: 16vw 2rem 2rem;
+  padding: 10rem 2rem 2rem;
   background: var(--theme-very-light-gray);
 }
 #testimonialsSection .userName {
@@ -220,8 +224,9 @@ ol {
 }
 #testimonialsSection #testimonialIndicator {
   display: flex;
+  align-items: stretch;
   justify-content: center;
-  margin: 2.5rem 0 2rem;
+  margin: 1rem 0 2rem;
   color: var(--theme-bright-red);
 }
 #testimonialsSection #testimonialIndicator li {
@@ -318,11 +323,14 @@ footer nav a {
   font-size: 1.4rem;
 }
 footer #socialMediaLinks {
+  display: flex;
+  justify-content: center;
   padding-top: 4rem;
 }
 footer #socialMediaLinks ul {
   display: flex;
   justify-content: space-around;
+  width: 40rem;
   padding: 0 2rem;
 }
 footer #socialMediaLinks li {
@@ -505,8 +513,34 @@ footer .attribution a {
   #testimonialsSection h2 {
     font-size: 4.1rem;
   }
+  #testimonialsSection #testimonialSpinner {
+    position: relative;
+  }
+  #testimonialsSection #testimonialSpinner:hover .spinnerBtn {
+    display: block;
+  }
+  #testimonialsSection .spinnerBtn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: 4rem;
+    height: auto;
+    z-index: 2;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  #testimonialsSection .spinnerBtn:hover path {
+    fill: var(--theme-bright-red);
+  }
+  #testimonialsSection #spinLeftBtn {
+    left: 15%;
+  }
+  #testimonialsSection #spinRightBtn {
+    right: 15%;
+  }
   #testimonialsSection #testimonials {
-    height: 20vh;
+    height: 35rem;
     perspective: 800px;
   }
   #testimonialsSection #testimonials li {
@@ -516,7 +550,10 @@ footer .attribution a {
     max-width: var(--min-width);
     height: 80%;
     left: calc((100% - var(--min-width)) / 2);
-    transition: all 200ms ease-in-out;
+    transition: all 250ms linear;
+  }
+  #testimonialsSection #testimonials li.active .testimonial {
+    box-shadow: 8px 0 10px 2px rgba(0, 0, 0, 0.1), -8px 0 10px 2px rgba(0, 0, 0, 0.1), 0px 8px 10px 2px rgba(0, 0, 0, 0.1);
   }
   #testimonialsSection #testimonials #testimonial1 {
     transform: translateX(0vw) translateZ(0px);
@@ -537,10 +574,11 @@ footer .attribution a {
   }
   #testimonialsSection #testimonials .testimonial {
     padding: 6rem 4rem 2rem;
+    transition: all 250ms linear;
   }
   #testimonialsSection #testimonials .avatarImage {
-    max-width: 4.8vh;
-    margin-bottom: -2.8vh;
+    max-width: 6rem;
+    transform: translateY(60%);
   }
   #testimonialsSection #testimonials q {
     line-height: 1.6;
@@ -548,9 +586,6 @@ footer .attribution a {
   }
   #testimonialsSection #testimonialIndicator {
     display: none;
-  }
-  #testimonialsSection .buttonContainer {
-    margin-top: 2rem;
   }
 
   #simplifySection {
@@ -617,6 +652,7 @@ footer nav a:focus {
     opacity: 0.7;
   }
   footer #socialMediaLinks {
+    display: block;
     grid-area: mediaLinks;
     padding-top: 3rem;
     margin-top: 1rem;

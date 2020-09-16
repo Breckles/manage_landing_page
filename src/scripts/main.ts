@@ -1,3 +1,11 @@
+// Reload page on resize
+addEventListener('resize', () => {
+  console.log('resizing...');
+  setTimeout(() => {
+    location.reload();
+  }, 100);
+});
+
 const testimonialsEl = document.querySelector(
   '#testimonials'
 ) as HTMLUListElement;
@@ -82,7 +90,7 @@ submitButtonEl.addEventListener('click', (event) => {
 
 //// Menu toggle (only for smaller screen widths) /////////////////////////////////////////////
 
-if (window.screen.width <= 375) {
+if (window.screen.width <= 1350) {
   const menuToggleEl = document.querySelector(
     '#menuToggle'
   ) as HTMLImageElement;
@@ -126,6 +134,10 @@ if (window.screen.width <= 375) {
 //// 3D Testimonial Spinner for wider screens only ////////////////////////////////
 
 const spinButton = document.querySelector('#spinButton') as HTMLButtonElement;
+const spinLeftBtn = document.querySelector('#spinLeftBtn') as HTMLButtonElement;
+const spinRightBtn = document.querySelector(
+  '#spinRightBtn'
+) as HTMLButtonElement;
 
 const orderedTestimonials: HTMLLIElement[] = [];
 
@@ -133,26 +145,57 @@ for (const li of testimonials) {
   orderedTestimonials.push(<HTMLLIElement>li);
 }
 
-spinButton.addEventListener('click', spinTestimonials);
+spinLeftBtn.addEventListener('click', () => {
+  spinTestimonials('left');
+});
+spinRightBtn.addEventListener('click', () => {
+  spinTestimonials('right');
+});
 
-function spinTestimonials() {
+function spinTestimonials(direction: 'left' | 'right') {
   console.log(orderedTestimonials);
 
-  orderedTestimonials[0].style.transform =
-    'translateX(-40vw) translateZ(-300px)';
-  orderedTestimonials[0].style.zIndex = '0';
-  orderedTestimonials[0].style.opacity = '0.5';
+  if (direction === 'left') {
+    orderedTestimonials[0].style.transform =
+      'translateX(-40vw) translateZ(-300px)';
+    orderedTestimonials[0].style.zIndex = '0';
+    orderedTestimonials[0].style.opacity = '0.5';
+    orderedTestimonials[0].classList.remove('active');
 
-  orderedTestimonials[1].style.transform = 'translateX(0vw) translateZ(0px)';
-  orderedTestimonials[1].style.zIndex = '2';
-  orderedTestimonials[1].style.opacity = '1';
+    orderedTestimonials[1].style.transform = 'translateX(0vw) translateZ(0px)';
+    orderedTestimonials[1].style.zIndex = '2';
+    orderedTestimonials[1].style.opacity = '1';
+    orderedTestimonials[1].classList.add('active');
 
-  orderedTestimonials[2].style.transform =
-    'translateX(40vw) translateZ(-300px)';
+    orderedTestimonials[2].style.transform =
+      'translateX(40vw) translateZ(-300px)';
 
-  orderedTestimonials[3].style.transform = 'translateX(0) translateZ(-600px)';
+    orderedTestimonials[3].style.transform = 'translateX(0) translateZ(-600px)';
 
-  // rotate array elements
-  let temp = orderedTestimonials.shift()!;
-  orderedTestimonials.push(temp);
+    // rotate array elements
+    let temp = orderedTestimonials.shift()!;
+    orderedTestimonials.push(temp);
+  } else {
+    // Rotate right
+    orderedTestimonials[0].style.transform =
+      'translateX(40vw) translateZ(-300px)';
+    orderedTestimonials[0].style.zIndex = '0';
+    orderedTestimonials[0].style.opacity = '0.5';
+    orderedTestimonials[0].classList.remove('active');
+
+    orderedTestimonials[1].style.transform =
+      'translateX(0vw) translateZ(-600px)';
+
+    orderedTestimonials[2].style.transform =
+      'translateX(-40vw) translateZ(-300px)';
+
+    orderedTestimonials[3].style.transform = 'translateX(0) translateZ(0px)';
+    orderedTestimonials[3].style.zIndex = '2';
+    orderedTestimonials[3].style.opacity = '1';
+    orderedTestimonials[3].classList.add('active');
+
+    // rotate array elements
+    let temp = orderedTestimonials.pop()!;
+    orderedTestimonials.unshift(temp);
+  }
 }
